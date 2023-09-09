@@ -1,0 +1,81 @@
+<?php
+    include_once('header.php');
+	?>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Manage Contacts</h1>
+                 
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+              
+            <div class="row">
+                <div class="col-md-12">
+                  <!--   Kitchen Sink -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Manage Contacts
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table" class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Contact_id</th>
+                                            <th>name</th>
+                                            <th>email</th>
+                                            <th>message</th>
+											<th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                        if (!empty($data_contacts))
+										{
+											foreach($data_contacts as $d)
+											{
+										?>		    
+                                        <tr>
+                                            <td><?php echo $d->Contact_id;?></td>
+                                            <td><?php echo $d->name;?></td>
+                                            <td><?php echo $d->email;?></td>
+                                            <td><?php echo $d->message;?></td>
+											<td>
+											   <a href="delete?delContact_id=<?php echo $d->Contact_id;?>" class="btn btn-danger me-2">Delete</a>
+											   <a href="" class="btn btn-success me-2">Add</a>
+											   <a href="" class="btn btn-primary me-2">Edit</a>
+                                            </td>                                       
+                                        </tr>
+										<?php
+											}
+										}
+										else
+										{
+										?>
+										<tr>
+										<td> DATA NOT FOUND </td>
+										</tr>
+										<?php
+										}
+										?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- End  Kitchen Sink -->
+                </div>
+                
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+<?php
+    include_once('footer.php');
+	?>    
