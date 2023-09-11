@@ -425,7 +425,8 @@ class control extends model // step 2 extends
 					{
 						//echo "<pre>"; print_r($_REQUEST);exit;
 						$Emp_name=$_REQUEST['Emp_name'];
-				
+						$Emp_address=$_REQUEST['Emp_address'];
+				        $Emp_mobileno=$_REQUEST['Emp_mobileno'];
 						
 						$Updated_at=date("Y-m-d H:i:s");
 						
@@ -437,8 +438,8 @@ class control extends model // step 2 extends
 							$tmp_file=$_FILES['file']['tmp_name'];
 							move_uploaded_file($tmp_file,$path);
 							
-							$arr=array("Emp_name"=>$Emp_name,
-							"file"=>$file,"Updated_at"=>$Updated_at);
+							$arr=array("Emp_name"=>$Emp_name,"Emp_address"=>$Emp_address,
+							"Emp_mobileno"=>$Emp_mobileno,"file"=>$file,"Updated_at"=>$Updated_at);
 							
 							$res=$this->update('employee',$arr,$where);
 							//echo "<pre>"; print_r( $res);exit;
@@ -447,20 +448,20 @@ class control extends model // step 2 extends
 								//echo "<pre>"; print_r($res);exit;
 								unlink('../upload/categories/'.$userfile);
 								echo "<script>
-								alert('categories Update success');
+								alert('employee Update success');
 								window.location='profile';
 								</script>";
 							}
 						}
 						else
 							{
-								$arr=array("Emp_name"=>$Emp_name,
-								"Updated_at"=>$Updated_at);
+								$arr=array("Emp_name"=>$Emp_name,"Emp_address"=>$Emp_address,
+								"Emp_mobileno"=>$Emp_mobileno,"Updated_at"=>$Updated_at);
 								$res=$this->update('employee',$arr,$where);
 								if($res)
 								{
 									echo "<script>
-									alert('categories Update success');
+									alert('employee Update success');
 									window.location='profile';
 									</script>";
 								}

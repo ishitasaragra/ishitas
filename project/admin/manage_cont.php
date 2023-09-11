@@ -45,8 +45,7 @@
                                             <td><?php echo $d->message;?></td>
 											<td>
 											   <a href="delete?delContact_id=<?php echo $d->Contact_id;?>" class="btn btn-danger me-2">Delete</a>
-											   <a href="" class="btn btn-success me-2">Add</a>
-											   <a href="" class="btn btn-primary me-2">Edit</a>
+											   
                                             </td>                                       
                                         </tr>
 										<?php

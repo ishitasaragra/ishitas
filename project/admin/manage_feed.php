@@ -45,8 +45,7 @@
                                             <td><?php echo $d->Feedback_comments;?></td>
 											<td>
 											   <a href="delete?delFeedback_id=<?php echo $d->Feedback_id;?>" class="btn btn-danger me-2">Delete</a>
-											   <a href="" class="btn btn-danger me-2">Add</a>
-											   <a href="" class="btn btn-primary me-2">Edit</a>
+											   
                                             </td>                                       
                                         </tr>
 										<?php

@@ -27,23 +27,40 @@ Author URL: http://w3layouts.com
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-starter.css">
   <!-- Template CSS -->
+  <script>
   
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" type="text/javascript"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" type="text/javascript"></script>
-   <link href="bvalidator.css" type="text/css" rel="stylesheet" />
-
+  function validate()
+  {
+	   var email = document.forms["myform"]["email"].value;
+	  if (email == "" || email == null)
+	  {
+		  alert('please fill out the email');
+		  return false;
+	  }
+	  
+	   var mail = /^[a-zA-Z0-9_]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$/;
+	  if (!mail.test(email))
+	  {
+		  alert('please fill in a proper email');
+		  return false;
+	  }
+	  
+	  var password = document.forms["myform"]["password"].value;
+	  if (password == "" || password == null)
+	  {
+		  alert('please fill out the password');
+		  return false;
+	  }
+	  
+	  if (!(password.length >=3 && password.length <=8))
+	  {
+		  alert('please provide a password minimum of 3 and a maximum of 8 characters');
+		  return false;
+	  }
+  }
+  </script>
+  
  
-
-  <!-- add script & call FORM id -->
-
-
-    <script type="text/javascript"> 
-    $(document).ready(function () {
-	
-        $('#form1').bValidator();
-    });
-	</script> 
 </head>
 
 <body>
@@ -66,14 +83,14 @@ Author URL: http://w3layouts.com
       
       <h3 class="hny-title mb-lg-5 mb-4">LOG IN HERE</h3>
         <div class="login12-main mb-5">
-            <form action="" method="post">
+            <form name="myform" action="" method="post" onsubmit="return validate()">
                 <div class="main-input ">
                     
                     <div class="d-grid">
                         <input type="email" name="email" placeholder="Enter Email Id"
-                            class="login-input" data-bvalidator="required,email"><br>
+                            class="login-input" ><br>
 					   <label><input type="password" name="password" placeholder="password"
-                            class="login-input" data-bvalidator="required,minlength[4],maxlength[8]"></label><br>
+                            class="login-input" ></label><br>
 					<div class="text-left">   
                     <a class="forget" href=" ">forget password?</a>
                     </div>	

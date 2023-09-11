@@ -19,6 +19,41 @@ Author URL: http://w3layouts.com
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-starter.css">
   <!-- Template CSS -->
+  <script>
+  function validate() 
+  {
+	// id get 
+	var name=document.forms["myform"]["name"].value;  
+	
+	if(name=="" || name==null) 
+	{
+		alert('Please fill out the User name'); 
+		return false;  
+	}
+	
+	var email = document.forms["myform"]["email"].value;
+	  if (email == "" || email == null)
+	  {
+		  alert('please fill out the email');
+		  return false;
+	  }
+	  
+	   var mail = /^[a-zA-Z0-9_]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$/;
+	  if (!mail.test(email))
+	  {
+		  alert('please fill in a proper email');
+		  return false;
+	  }
+	  
+	  var message=document.forms["myform"]["message"].value;  
+	
+	if(message=="" || message==null) 
+	{
+		alert('Please fill out the message'); 
+		return false;  
+	}
+  }
+</script>
 </head>
 
 <body>
@@ -41,19 +76,19 @@ Author URL: http://w3layouts.com
       
       <h3 class="hny-title mb-lg-5 mb-4">Get in touch</h3>
         <div class="contacts12-main mb-5">
-            <form action="" method="post">
+            <form name="myform" action="" method="post" onsubmit="return validate()">
                 <div class="main-input">
                     <div class="d-grid">
-                        <input type="text" name="name" placeholder="name" class="contact-input" required/>
+                        <input type="text" name="name" placeholder="name" class="contact-input">
                         
                     </div>
                     <div class="d-grid">
                         <input type="email" name="email"  placeholder="email"
-                            class="contact-input" required/>
+                            class="contact-input">
                     </div>
                 </div>
                 <textarea class="form-control" type="text" name="message" 
-                    placeholder="message" required></textarea>
+                    placeholder="message"></textarea>
                 <div class="text-right">
                     <button class="btn btn-style btn-primary btn-contact" type="submit" name="submit">Submit Now</button>
                 </div>

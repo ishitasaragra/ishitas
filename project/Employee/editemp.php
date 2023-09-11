@@ -28,11 +28,11 @@
 								        </div><br>
                                         <div class="form-group">
                                             <label>Emp_address</label>
-                                            <input class="form-control" type="text" value="<?php echo $fetch->Emp_address?>" name="Emp_name">
+                                            <input class="form-control" type="text" value="<?php echo $fetch->Emp_address?>" name="Emp_address">
 								        </div><br>
                                         <div class="form-group">
                                             <label>Emp_mobileno</label>
-                                            <input class="form-control" type="text" value="<?php echo $fetch->Emp_mobileno?>" name="Emp_name">
+                                            <input class="form-control" type="text" value="<?php echo $fetch->Emp_mobileno?>" name="Emp_mobileno">
 								        </div><br>
 										<div class="form-group">
                                             <label>Category_image</label> 
