@@ -56,15 +56,6 @@ if(isset($_SESSION['firstname']))
               <a class="nav-link" href="contact">Contact</a>
 			</li>
 			
-			
-			 <form class="form-inline" >
-        <input type="search" placeholder="Search" >
-        <button class="btn my-2 my-sm-2 nav_search-btn" type="submit">
-		<img src="image\magnifying-glass.png" width="20px" alt=""></button>
-      </form>
-       
-            
-
           </ul>
         </div>
         
