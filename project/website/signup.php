@@ -198,7 +198,7 @@ function validate()
 				</div>
                 
                 <div class="text-right">
-                   <br> <button class="btn btn-style btn-primary btn-contact" type="submit" name="submit">Submit Now</button>
+                   <br> <button class="btn btn-style btn-primary btn-contact" type="submit" name="submit">Submit Now</button><br>
 					<a class="float-left" href="login">If you allready Register then click Login</a>
                 </div>
 				    
